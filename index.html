@@ -27,7 +27,7 @@
     <meta name="viewport" content="width=device-width" />
   </head>
   <body>
-    <a href="#conteudoPrincipal" class="pularNavegacao"
+    <a href="#conteudoPrincipal" id="conteudoForaDialog" class="pularNavegacao"
       >Pular para conteúdo principal</a
     >
 
@@ -407,21 +407,33 @@
           </button>
         </div>
 
-        <div class="dialogNewsletter" id="dialogNewsletter" role="dialog">
+        <div
+          class="dialogNewsletter"
+          id="dialogNewsletter"
+          role="dialog"
+          aria-labelledby="tituloDialog"
+        >
           <div class="dialogNewsletter-body">
-            <h2 class="dialogNewsletter-titulo">News sem spam</h2>
+            <h2 class="dialogNewsletter-titulo" id="tituloDialog">
+              News sem spam
+            </h2>
             <h3 class="dialogNewsletter-texto">
               Assine nossa newsletter para receber notícias técnicas sem spam!
             </h3>
             <form class="dialogNewsletter-form">
-              <label class="dialogNewsletter-label"> Email: </label>
+              <label class="dialogNewsletter-label" for="emailNewsletter">
+                Email:
+              </label>
               <input
-                type="text"
+                type="email"
                 class="dialogNewsletter-campo"
                 placeholder="Digite seu e-mail..."
+                id="emailNewsletter"
               />
-              <button class="dialogNewsletter-btn">Assinar newsletter</button>
-              <button class="dialogNewsletter-fechar">X</button>
+              <button class="dialogNewsletter-btn" type="submit">
+                Assinar newsletter
+              </button>
+              <button class="dialogNewsletter-fechar" type="button">X</button>
             </form>
           </div>
           <div class="dialogNewsletter-overlay"></div>
@@ -430,7 +442,7 @@
       </section>
       <!--fim .secaoDestaques-->
 
-      <section class="secaoContato">
+      <section class="secaoContato" inert="true">
         <div class="container">
           <h2 class="tituloPadrao">CONTATO</h2>
 
@@ -647,6 +659,7 @@
       </div>
     </footer>
     <script src="js/carousel.js"></script>
+    <script src="js/inert.js"></script>
     <script src="js/dialog.js"></script>
   </body>
 </html>
